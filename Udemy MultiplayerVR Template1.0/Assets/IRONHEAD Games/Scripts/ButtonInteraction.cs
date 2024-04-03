@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ButtonInteraction : MonoBehaviour
 {
+
     public void OnButtonPressed()
     {
-        Debug.Log("Button Pressed");
+        Debug.Log("Button Pressed.");
     }
 }

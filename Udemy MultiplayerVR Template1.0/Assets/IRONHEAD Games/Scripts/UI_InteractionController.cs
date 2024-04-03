@@ -20,7 +20,7 @@ public class UI_InteractionController : MonoBehaviour
     bool isUICanvasActive = false;
 
     [SerializeField]
-    GameObject UICanvasGameobject;
+    GameObject UIGameobjects;
 
   
     private void OnEnable()
@@ -28,17 +28,19 @@ public class UI_InteractionController : MonoBehaviour
         inputActionReference_UISwitcher.action.performed += ActivateUIMode;
     }
     private void OnDisable()
+{
+    if (inputActionReference_UISwitcher?.action != null) // Using the null-conditional operator to perform a null check
     {
         inputActionReference_UISwitcher.action.performed -= ActivateUIMode;
-
     }
+}
 
     private void Start()
     {
         //Deactivating UI Canvas Gameobject by default
-        if (UICanvasGameobject !=null)
+        if (UIGameobjects !=null)
         {
-            UICanvasGameobject.SetActive(false);
+            UIGameobjects.SetActive(false);
 
         }
 
@@ -68,7 +70,7 @@ public class UI_InteractionController : MonoBehaviour
           
 
             //Activating the UI Canvas Gameobject
-            UICanvasGameobject.SetActive(true);
+            UIGameobjects.SetActive(true);
         }
         else
         {
@@ -82,7 +84,7 @@ public class UI_InteractionController : MonoBehaviour
             BaseController.GetComponent<XRDirectInteractor>().enabled = true;
 
             //De-Activating the UI Canvas Gameobject
-            UICanvasGameobject.SetActive(false);
+            UIGameobjects.SetActive(false);
         }
 
     }

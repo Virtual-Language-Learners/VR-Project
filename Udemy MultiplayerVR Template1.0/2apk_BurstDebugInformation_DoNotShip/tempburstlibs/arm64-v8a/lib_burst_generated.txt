@@ -25,6 +25,10 @@ Library: C:\Users\HP\VR-Project\Udemy MultiplayerVR Template1.0\Temp\BurstOutput
 --assembly-defines=PhotonUnityNetworking.Demos;
 --assembly-defines=PhotonUnityNetworking;
 --assembly-defines=PhotonUnityNetworking.Utilities;
+--assembly-defines=PhotonVoice.API;
+--assembly-defines=PhotonVoice;
+--assembly-defines=PhotonVoice.Fusion;
+--assembly-defines=PhotonVoice.PUN;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
 --assembly-defines=System;
@@ -84,6 +88,10 @@ Library: C:\Users\HP\VR-Project\Udemy MultiplayerVR Template1.0\Temp\BurstOutput
 --assembly-defines=PhotonUnityNetworking.Demos;
 --assembly-defines=PhotonUnityNetworking;
 --assembly-defines=PhotonUnityNetworking.Utilities;
+--assembly-defines=PhotonVoice.API;
+--assembly-defines=PhotonVoice;
+--assembly-defines=PhotonVoice.Fusion;
+--assembly-defines=PhotonVoice.PUN;
 --assembly-defines=System.Configuration;
 --assembly-defines=System.Core;
 --assembly-defines=System;
