@@ -19,23 +19,22 @@ namespace VRKeys {
 	/// </summary>
 	public class Controller : MonoBehaviour {
 		private Mallet mallet;
+		private InputDeviceRole role = InputDeviceRole.Unknown;
 		private InputDevice _device = new InputDevice ();
-
-		[Tooltip("Input Device Characteristics")]
-		public InputDeviceCharacteristics controllerCharacteristics;
 
 		private void Start () {
 			mallet = GetComponent<Mallet> ();
-			//controllerCharacteristics = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-			controllerCharacteristics = (mallet.hand == Mallet.MalletHand.Left) ? InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.HeldInHand : InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.HeldInHand;
+
+			role = (mallet.hand == Mallet.MalletHand.Left) ? InputDeviceRole.LeftHanded : InputDeviceRole.RightHanded;
 		}
 
 		private InputDevice GetDevice () {
 			if (_device.isValid) return _device;
-			//if (role == InputDeviceRole.Unknown) return _device;
+			if (role == InputDeviceRole.Unknown) return _device;
 
 			List<InputDevice> devices = new List<InputDevice> ();
-			InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics,devices);
+			InputDevices.GetDevicesWithRole (role, devices);
+
 			if (devices.Count > 0 && devices[0].isValid) {
 				_device = devices[0];
 			}
