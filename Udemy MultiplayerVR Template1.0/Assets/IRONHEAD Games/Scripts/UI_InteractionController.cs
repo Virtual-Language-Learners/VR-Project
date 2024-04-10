@@ -88,4 +88,9 @@ public class UI_InteractionController : MonoBehaviour
         }
 
     }
+    public void setUICanvasActive()
+    {
+        UIGameobjects.SetActive(false);
+        isUICanvasActive = false;
+    }
 }

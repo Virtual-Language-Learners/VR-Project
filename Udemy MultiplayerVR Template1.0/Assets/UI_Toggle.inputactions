@@ -1,0 +1,34 @@
+{
+    "name": "UI_Toggle",
+    "maps": [
+        {
+            "name": "UI_Toggle",
+            "id": "8ef104a0-b2af-4824-ac5b-44969a01f063",
+            "actions": [
+                {
+                    "name": "ActivateUI",
+                    "type": "Button",
+                    "id": "da6a001b-9ae2-4297-b488-793e95d3bea8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "15bc78a8-4f91-42c5-aa45-6b18d715b896",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
